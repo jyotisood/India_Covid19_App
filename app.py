@@ -20,13 +20,13 @@ def map_maker():
     long1 = 77.10898
     m = folium.Map(location = [lat1, long1], zoom_start=5, tiles = 'Stamen toner')
     folium.Circle(location = [lat1, long1], 
-                  radius = 5, 
+                  radius = 1000, 
                   color = 'red', 
                   fill = True).add_to(m)
 
     def circle_maker(x):
         folium.Circle(location = [x[0], x[1]], 
-                  radius = float(np.max([x[2]*2, 5])), 
+                  radius = float(np.max([x[2]*15, 20])), 
                   color = 'red', 
                   popup = f'<h5 style="backgroundcolor:black;fontcolor:white">{x[4]}</h5>\n<strong>Deaths</strong>:  {x[3]}</h5>\n<strong>Confirmed</strong>:  {x[2]}',
                   fill = True).add_to(m)
