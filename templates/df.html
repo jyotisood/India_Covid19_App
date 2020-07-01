@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br/>
+<br />
+<div class = "container">
+<h1>Corona Virus Information: India</h1>
+</div>
+<br />
+<br />
+<br />
+<br />
+
+<div class = "container">
+    <div class = "row">
+        <div class = "col-4">
+           <h5><font color = 'red'>Top 15 States</font></h5>
+           <p>This data comes from a resource <a>John's Hopkins</a> provides
+        with updated daily reports on worldwide corona virus cases.</p>
+            <table class = "table-responsive-sm table-dark table-sm">
+            <thead>
+            <tr>
+                <th scope = "col">State</th>
+                <th scope = "col">Confirmed</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for pair in pairs %}
+
+                    <tr>
+                        <td>{{ pair[0] }}</td>
+                        <td>{{ pair[1] }}</td>
+                    </tr>
+
+                {% endfor %}
+            </tbody>
+            </table>
+     
+        </div>
+        <div class = "col-8">
+            <h5><font color = 'firebrick'>Map of India depicting Confirmed Cases of Covid19</font></h5>
+            <p>Click on the red circles to find out the total number of Covid19 related fatalities and confirmed cases for that State.
+            </p>
+            {{ vmap | safe }}
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+
