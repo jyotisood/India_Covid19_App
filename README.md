@@ -9,3 +9,7 @@ Deployed at: https://india-covid19-cases.herokuapp.com/
 
 
 ![](app_cover_img.png)
+
+
+Credit:
+The code used in this repository is a derivative work of the code from https://github.com/jfkoehler/Teaching-with-COVID
