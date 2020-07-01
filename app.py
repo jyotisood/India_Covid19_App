@@ -4,8 +4,13 @@ import numpy as np
 
 def map_maker():
     import folium
-    #url to the data
-    url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/06-29-2020.csv'
+    #url to the 
+    import datetime
+    today= datetime.datetime.today() 
+    yesterday=datetime.timedelta(days=1)
+    yesterday_str= (today-yesterday).strftime('%m-%d-%Y')
+    url = f'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/{yesterday_str}.csv'
+    
 
     #read in data
     corona_df = pd.read_csv(url)
@@ -35,8 +40,6 @@ def find_top_confirmed(n = 15):
     DataFrames with confirmed, death, recovered,
     and active information on top n countries.
     '''
-    
-    
     import datetime
     today= datetime.datetime.today() 
     yesterday=datetime.timedelta(days=1)
