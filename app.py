@@ -26,7 +26,7 @@ def map_maker():
 
     def circle_maker(x):
         folium.Circle(location = [x[0], x[1]], 
-                  radius = float(np.max([x[2]*15, 20])), 
+                  radius = float(np.max([x[2]*4, 7])), 
                   color = 'red', 
                   popup = f'<h5 style="backgroundcolor:black;fontcolor:white">{x[4]}</h5>\n<strong>Deaths</strong>:  {x[3]}</h5>\n<strong>Confirmed</strong>:  {x[2]}',
                   fill = True).add_to(m)
